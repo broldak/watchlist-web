@@ -2,16 +2,18 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    return this.store.query('movie', {})
-  },
-
-  afterModel(model) {
-    debugger;
+    return {
+      movies: []
+    };
   },
 
   actions: {
-    search(val) {
-      debugger;
+    fetchMovies(query) {
+      this.controller.set('model.movies', this.store.query('movie', {q: query}));
+    },
+
+    selectMovie(movie) {
+      this.controller.set('model.selectedMovie', movie);
     }
   }
 });

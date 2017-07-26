@@ -1,0 +1,15 @@
+<div class="typeahead">
+  {{input class="typeahead__input" key-up=(action "onInput") value=title}}
+
+  {{#if showResults}}
+    <div class="typeahead-results">
+      <ul class="typeahead-results__list">
+        {{#each movies as |movie|}}
+          <li class="typeahead-results__result" {{action "selectMovie" movie}}>
+            {{movie.title}}
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/if}}
+</div>
