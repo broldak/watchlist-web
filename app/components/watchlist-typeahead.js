@@ -1,9 +1,28 @@
 import Ember from 'ember';
+import ClickOutside from '../mixins/click-outside';
 
-export default Ember.Component.extend({
+const { Component, on } = Ember;
+const { next } = Ember.run;
+
+export default Component.extend(ClickOutside, {
   title: '',
+  showMovies: true,
 
-  showResults: Ember.computed.alias('movies'),
+  showResults: Ember.computed('movies.length', 'showMovies', function() {
+    return this.get('movies.length') > 0 && this.get('showMovies');
+  }),
+
+  clickOutside() {
+    this.set('showMovies', false);
+  },
+
+  focusIn(evt) {
+    this.set('showMovies', true);
+  },
+
+  _attachClickOutsideHandler: on('didInsertElement', function() {
+    next(this, this.addClickOutsideListener);
+  }),
 
   actions: {
     onInput() {
@@ -12,7 +31,7 @@ export default Ember.Component.extend({
 
     selectMovie(movie) {
       this.selectAction(movie);
-      this.set('showResults', false);
+      this.set('movies', []);
     }
   }
 });

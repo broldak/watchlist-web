@@ -1,8 +1,15 @@
-{{!-- {{movie.title}}
-{{movie.year}} --}}
 <div class="movie-card__image">
-  <img src="{{movie.poster}}" />
-  <div class="movie-card__actions">
-    <button class="movie-card__add"><i class="fa fa-plus fa-2x" aria-hidden="true"></i></button>
-  </div>
+  {{#unless imageError}}
+    <div class="movie-card__image-wrapper">
+      {{!-- image goes here --}}
+    </div>
+    <div class="movie-card__actions {{unless hasLoadedImage "hidden"}}">
+      <button class="movie-card__add"><i class="fa fa-plus fa-2x" aria-hidden="true"></i></button>
+    </div>
+  {{else}}
+    <div class="movie-card__image--ghost">
+      <i class="fa fa-exclamation-circle fa-5x" aria-hidden="true"></i>
+      We can't find this movie's poster.
+    </div>
+  {{/unless}}
 </div>

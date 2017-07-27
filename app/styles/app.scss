@@ -1,6 +1,8 @@
 // App styles
+@import "reset";
 @import "base";
 
 // Component styles
 @import "components/movie-card";
 @import "components/typeahead";
+@import "components/watchlist-nav";
