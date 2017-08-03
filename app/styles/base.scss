@@ -1,15 +1,25 @@
 body,
 html,
 input {
-  font-family: 'Helvetica Neue';
-  font-weight: 400;
+  font-family: 'Assistant', sans-serif;
+  font-weight: 300;
 }
 
 input {
-  padding: 8px;
-  font-size: 15px;
+  padding: 16px 8px;
+  font-size: 17px;
+  border-radius: 2px;
+  box-sizing: border-box;
+
+  &.block-input {
+    display: block;
+  }
 }
 
 body {
   background-color: #fbfbfb;
+}
+
+.logo {
+  font-family: 'Cookie', cursive;
 }

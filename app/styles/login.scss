@@ -1,0 +1,50 @@
+.login {
+  &__container {
+    @include brand-gradient();
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__logo {
+    font-size: 96px;
+    color: white;
+    margin-bottom: 16px;
+  }
+
+  &-form {
+    width: 320px;
+
+    &__input {
+      width: 100%;
+      border: none;
+      border-bottom: 2px solid white;
+      background-color: transparent;
+      border-radius: 0;
+      margin-bottom: 16px;
+      color: white;
+    }
+
+    &__label {
+      transition: all 0.15s ease-out;
+      opacity: 0;
+      padding-left: 8px;
+      color: white;
+      position: absolute;
+      transform: translateY(4px);
+
+      &--active {
+        opacity: 1;
+        transform: translateY(-8px);
+        color: rgba(255,255,255,0.7);
+      }
+    }
+
+    &__submit {
+      width: 100%;
+      margin-top: 16px;
+    }
+  }
+}

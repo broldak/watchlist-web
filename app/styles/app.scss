@@ -1,6 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Cookie|Assistant:300,400,600,700');
+
 // App styles
 @import "reset";
+@import "variables";
+@import "placeholders";
 @import "base";
+
+// Util classes
+@import "utils/buttons";
+@import "utils/mixins";
+
+// Route styles
+@import "login";
 
 // Component styles
 @import "components/movie-card";

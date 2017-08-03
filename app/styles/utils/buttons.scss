@@ -1,0 +1,39 @@
+.btn {
+  font-family: 'Assistant', sans-serif;
+  font-weight: 300;
+  border-radius: 12px;
+  cursor: pointer;
+
+  &--small {
+
+  }
+
+  &--medium {
+
+  }
+
+  &--large {
+    padding: 12px 36px;
+    font-size: 19px;
+  }
+
+  &--primary {
+
+  }
+
+  &--secondary {
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    transition: all 0.15s ease-out;
+
+    &:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    &:focus,
+    &:active {
+      background: rgba(255,255,255,0.4);
+    }
+  }
+}
