@@ -38,13 +38,14 @@ export default Base.extend({
       $.ajax(requestOpts).then((response) => {
         debugger;
 
-        const { token } = response;
+        const { token, user_id } = response;
 
         debugger;
 
         run(() => {
           res({
-            token
+            token,
+            user_id
           });
         });
       }, (err) => {
